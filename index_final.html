@@ -188,8 +188,8 @@ function draw_heatmap(data)
         //update highlight position 
         d3.select("#highlight")
           .style("height", (gridSize) + "px")
-          .style("width", (gridSize * col_num + 10) + "px")
-          .style("left", (margin_h.left ) + "px")
+          .style("width", (gridSize * (col_num + 0.4)) + "px")
+          .style("left", (margin_h.left +0.1 * gridSize) + "px")
           .style("top", (margin_h.top + (i+0.3)*gridSize ) + "px");
           
           //Show the highlight
@@ -213,10 +213,10 @@ function draw_heatmap(data)
       .on("click", function(d,i) {
         //update highlight position 
         d3.select("#highlight")
-          .style("height", (gridSize * row_num + 10) + "px")
-          .style("width", (gridSize) + "px")
-          .style("left", (margin_h.left + (i + 0.3)*gridSize) + "px")
-          .style("top", margin_h.top + "px");
+          .style("height", (gridSize * (row_num + 0.4)) + "px")
+          .style("width", (gridSize*1.1) + "px")
+          .style("left", (margin_h.left + (i + 0.3) * gridSize) + "px")
+          .style("top", (margin_h.top + 0.1* gridSize) + "px");
           
         //Show the highlight
         d3.select("#highlight").classed("hidden", false);       
